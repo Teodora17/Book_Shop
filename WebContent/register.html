@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="css/main.css" type="text/css"/>
+        <title>Registration</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div id="content">
+        <div class="header">
+            <img src="./img/companyLogo.jpg" width="100px"  />
+            <span class="header-text">COMPANY NAME</span>
+        </div>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">Register</a>
+          <a href="#">Contact</a>
+        </nav>
+            <h1>Registration form</h1>   
+            <form method="post" action="RegistrationController"> 
+              <div class="form-element">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" size="40" required minlength="1">
+                    <span id="name-error" class="error-message"></span>
+                </div>
+                <div class="form-element">
+                    <label for="username">Username</label>
+                    <input type="text" name="uname" id="uname" required minlength="1">
+                </div>
+                <div class="form-element">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required minlength="1" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Must have at least 6 characters' : ''); if(this.checkValidity()) form.rPassword.pattern = this.value;" placeholder="Password"
+                    >
+                </div>
+                <div class="form-element">
+                    <label for="rPassword">Repeat password</label>
+                    <input type="password" id="rPassword" required minlength="1" pattern="^\S{6,}$" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" oninvalid="this.setCustomValidity('Please enter the same password')" placeholder="Verify Password">
+                </div>
+                <div class="form-element">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required minlength="1">
+                </div>
+                <div class="form-element">
+                    <label for="gender">Gender</label>
+                    Male<input type="radio" name="gender" value="male" checked> 
+                    Female<input type="radio" name="gender" value="female"> 
+                </div>
+                <div class="form-element">
+                    <label for="tel">Telephone</label>
+                    <input type="tel" name="tel" id="tel" required minlength="1" onchange="this.setCustomValidity(this.validity.patternMismatch 
+                    ? 'Enter Phone number here, only numbers, use 00 instead of +' : '');">
+                </div>
+                <div class="form-element">
+                    <label for="country">Country</label>
+                    <select name="country" id="country">
+                        <option>Romania</option>
+                        <option>Italy</option>
+                        <option>France</option>
+                        <option>Germany</option>
+                    </select>
+                </div>
+                <div class="form-element">
+                    <label for="maillist">Subscribe to maillist</label>
+                    <input type="checkbox" name="maillist" id="maillist">
+                </div> 
+                  <div class="form-element">
+                    <input type="submit" value="Submit" onc>
+                    <input type="reset" value="Reset">
+                </div>  
+                      
+                    
+            </form>
+            
+        </div>
+    </body>
+</html>
